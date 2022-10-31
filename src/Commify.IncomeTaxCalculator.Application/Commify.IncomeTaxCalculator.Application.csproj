@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>Commify.IncomeTaxCalculator</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Commify.IncomeTaxCalculator.Domain\Commify.IncomeTaxCalculator.Domain.csproj" />
+    <ProjectReference Include="..\Commify.IncomeTaxCalculator.Application.Contracts\Commify.IncomeTaxCalculator.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Account.Application" Version="6.0.1" />
+    <PackageReference Include="Volo.Abp.Identity.Application" Version="6.0.1" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="6.0.1" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Application" Version="6.0.1" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="6.0.1" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Application" Version="6.0.1" />
+  </ItemGroup>
+
+</Project>
