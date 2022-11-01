@@ -1,9 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Commify.IncomeTaxCalculator.TaxBands;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 using Volo.Abp.FeatureManagement.EntityFrameworkCore;
 using Volo.Abp.Identity;
 using Volo.Abp.Identity.EntityFrameworkCore;
@@ -24,7 +26,7 @@ public class IncomeTaxCalculatorDbContext :
     ITenantManagementDbContext
 {
     /* Add DbSet properties for your Aggregate Roots / Entities here. */
-
+    public DbSet<TaxBand> TaxBands { get; set; }
     #region Entities from the modules
 
     /* Notice: We only implemented IIdentityDbContext and ITenantManagementDbContext
@@ -75,11 +77,11 @@ public class IncomeTaxCalculatorDbContext :
 
         /* Configure your own tables/entities inside here */
 
-        //builder.Entity<YourEntity>(b =>
-        //{
-        //    b.ToTable(IncomeTaxCalculatorConsts.DbTablePrefix + "YourEntities", IncomeTaxCalculatorConsts.DbSchema);
-        //    b.ConfigureByConvention(); //auto configure for the base class props
-        //    //...
-        //});
+        builder.Entity<TaxBand>(b =>
+        {
+            b.ToTable(IncomeTaxCalculatorConsts.DbTablePrefix + "TaxBands", IncomeTaxCalculatorConsts.DbSchema);
+            b.ConfigureByConvention(); //auto configure for the base class props
+            b.Property(x => x.Name).IsRequired().HasMaxLength(200);
+        });
     }
 }

@@ -4,6 +4,7 @@ using Commify.IncomeTaxCalculator.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -12,9 +13,10 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Commify.IncomeTaxCalculator.Migrations
 {
     [DbContext(typeof(IncomeTaxCalculatorDbContext))]
-    partial class IncomeTaxCalculatorDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221031194002_Created_TaxBands")]
+    partial class Created_TaxBands
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -1,8 +1,10 @@
 {
   "culture": "en",
   "texts": {
+    "Calculate": "Calculate",
     "Menu:Home": "Home",
+    "Menu:TaxCalculator": "Tax Calculator",
     "Welcome": "Welcome",
-    "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information, visit abp.io."
+    "LongWelcomeMessage": "Welcome to the application. This is a tax calculator that should never be used to actually do your taxes.  Visit https://www.gov.uk/government/organisations/hm-revenue-customs for more details."
   }
 }
